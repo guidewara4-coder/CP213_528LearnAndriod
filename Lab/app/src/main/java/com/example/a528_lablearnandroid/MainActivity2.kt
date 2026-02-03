@@ -1,5 +1,6 @@
 package com.example.a528_lablearnandroid
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -76,6 +77,9 @@ class MainActivity2 : ComponentActivity() {
                             .size(480.dp)
                             .padding(top = 16.dp)
                             .align(Alignment.CenterHorizontally)
+                            .clickable {
+                                startActivity(Intent(this@MainActivity2, ListActivity::class.java))
+                            }
                     )
                     var str by remember { mutableStateOf(8) }
                     var agi by remember { mutableStateOf(10) }

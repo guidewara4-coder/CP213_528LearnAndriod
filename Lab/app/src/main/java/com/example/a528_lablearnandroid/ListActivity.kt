@@ -1,6 +1,5 @@
 package com.example.a528_lablearnandroid
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,37 +13,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.a528_lablearnandroid.ui.theme._528_LabLearnAndroidTheme
 
-class MainActivity : ComponentActivity() {
+class ListActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            _528_LabLearnAndroidTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            ListScreen()
 
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun ListScreen() {
+
 }
 
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    _528_LabLearnAndroidTheme {
-        Greeting("Android")
-    }
+fun ListPreview() {
+    ListScreen()
 }
