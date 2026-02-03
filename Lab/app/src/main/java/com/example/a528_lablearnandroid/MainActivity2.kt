@@ -33,61 +33,35 @@ class MainActivity2 : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Column(modifier = Modifier
-                .fillMaxSize()
-                .background(Color.Gray)) {
-
-                //hp
-                Box(modifier = Modifier
-                    .fillMaxWidth()
-                    .height(32.dp)
-                    .background(Color.White)
+            _528_LabLearnAndroidTheme { 
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Gray)
+                        .padding(32.dp)
                 ) {
-                    Text(
-                        text = "hp",
-                        modifier = Modifier.align(alignment = Alignment.Center)
+                    // hp
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(32.dp)
+                            .background(color = Color.White)
+                    ) {
+                        Text(
+                            text = "hp",
+                            modifier = Modifier
+                                .align(alignment = Alignment.CenterStart)
+                                .fillMaxWidth(fraction = 0.75f)
+                                .background(color = Color.Red)
+                                .padding(8.dp)
 
-                    )
+                        )
+                    }
+
+                    // image
+                    // status
                 }
-                //image
-
-                //status
-
-                }
-           // }
+            }
         }
-    }
-}
-
-@Composable
-fun Greeting2(name: String, modifier: Modifier = Modifier) {
-    var inputText by remember { mutableStateOf("") }
-
-    Column {
-        Text(
-            text = "Hello $name! say = "+inputText,
-            modifier = modifier
-        )
-//        TextField(
-//            value = inputText,
-//            onValueChange = {
-//                inputText = it
-//            }
-//        )
-        TextField(
-            value = "",
-            onValueChange = {}
-
-        )
-    }
-}
-
-
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview2() {
-    _528_LabLearnAndroidTheme {
-        Greeting2("Android")
     }
 }
