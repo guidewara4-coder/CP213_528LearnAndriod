@@ -27,13 +27,23 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.a528_lablearnandroid.ui.theme._528_LabLearnAndroidTheme
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Button
+import androidx.compose.ui.focus.focusModifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.sp
 
 class MainActivity2 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            _528_LabLearnAndroidTheme { 
+            _528_LabLearnAndroidTheme {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -51,17 +61,78 @@ class MainActivity2 : ComponentActivity() {
                             text = "hp",
                             modifier = Modifier
                                 .align(alignment = Alignment.CenterStart)
-                                .fillMaxWidth(fraction = 0.75f)
-                                .background(color = Color.Red)
+                                .fillMaxWidth(fraction = 0.28f)
+                                .background(color = Color.DarkGray)
                                 .padding(8.dp)
 
                         )
                     }
 
                     // image
+                    Image(
+                        painter = painterResource(id = R.drawable.aglaea),
+                        contentDescription = "Profile",
+                        modifier = Modifier
+                            .size(480.dp)
+                            .padding(top = 16.dp)
+                            .align(Alignment.CenterHorizontally)
+                    )
+                    var str by remember { mutableStateOf(8) }
+                    var agi by remember { mutableStateOf(10) }
+                    var int by remember { mutableStateOf(15) }
+
                     // status
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 12.dp) ,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Column {
+                            Button(onClick = {
+                                str = str +1
+                            }) {
+                            Image(
+                                painter = painterResource(id = R.drawable.outline_arrow_drop_up_24),
+                                contentDescription = "Up" ,
+                                modifier = Modifier.size(48.dp)
+                            )
+                            }
+                            Text(text = "Speed", fontSize = 20.sp)
+                            Text(text = str.toString(), fontSize = 20.sp)
+                            Image(
+                                painter = painterResource(id = R.drawable.outline_arrow_drop_down_24),
+                                contentDescription = "Down" ,
+                                modifier = Modifier
+                                    .size(48.dp)
+                                    .clickable { str = str -1 }
+                            )
+                        }
+                        Column {
+                            Text(text = "+", fontSize = 32.sp)
+                            Text(text = "Critical", fontSize = 20.sp)
+                            Text(text = agi.toString(), fontSize = 32.sp)
+                            Text(text = "-", fontSize = 32.sp)
+                        }
+                        Column {
+                            Text(text = "+", fontSize = 32.sp)
+                            Text(text = "Defence", fontSize = 20.sp)
+                            Text(text = int.toString(), fontSize = 32.sp)
+                            Text(text = "-", fontSize = 32.sp)
+                        }
+                    }
                 }
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
