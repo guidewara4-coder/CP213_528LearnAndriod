@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,7 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme._528_LabLearnAndroid"
-        tools:targetApi="31">
+        tools:targetApi="36">
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/Theme._528_LabLearnAndroid" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".ListActivity"
             android:exported="false"
@@ -21,18 +34,14 @@
             android:name=".MainActivity2"
             android:exported="true"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme._528_LabLearnAndroid">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme._528_LabLearnAndroid"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme._528_LabLearnAndroid"></activity>
+            android:theme="@style/Theme._528_LabLearnAndroid">
+
+        </activity>
     </application>
 
 </manifest>

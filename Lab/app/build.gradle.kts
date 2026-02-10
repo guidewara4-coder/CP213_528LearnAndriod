@@ -37,6 +37,9 @@ android {
     buildFeatures {
         compose = true
     }
+    dependencies {
+        implementation("io.coil-kt:coil-compose:2.5.0")
+    }
 }
 
 dependencies {
