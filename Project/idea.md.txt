@@ -1,5 +1,4 @@
 ## MemforMe : เป็นแอพแนว To-do List 
-
 Basic Feture 
 1.สามารถ Create Read Update Delete งานที่ต้องการได้
 2.checkbox งานที่ทำแล้ว อาจจะย้ายไปท้ายรายการ หรือแยกเป็นแท็บ Complete
@@ -14,3 +13,4 @@ Optional Feture
 1.อาจจะมีตั้งแจ้งเตือนเวลา เช่น 8.00 มีงานใน list
 2.Memo Dashboard หน้ากราฟสรุป productivity ของผู้ใช้ ว่าอาทิตย์นี้ทำสำเร็จไปกี่งาน
 3.มีการ swipe งานนั้นๆได้ เช่นปัดเพื่อแก้ไข หรือลบ
+
