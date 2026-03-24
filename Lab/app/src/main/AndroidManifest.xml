@@ -2,7 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -42,6 +51,21 @@
             android:theme="@style/Theme._528_LabLearnAndroid">
 
         </activity>
+        <activity
+            android:name=".CameraActivity"
+            android:exported="false"
+            android:label="Camera Flow"
+            android:theme="@style/Theme._528_LabLearnAndroid" />
+        <activity
+            android:name=".GalleryActivity"
+            android:exported="false"
+            android:label="Gallery Flow"
+            android:theme="@style/Theme._528_LabLearnAndroid" />
+        <activity
+            android:name=".SensorActivity"
+            android:exported="false"
+            android:label="Sensor Flow"
+            android:theme="@style/Theme._528_LabLearnAndroid" />
     </application>
 
 </manifest>
